@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contorno de color verde</title>
+  <script>
+    var currentQuestion = 1;
+    
+    function showQuestion() {
+      var question = document.getElementById('question' + currentQuestion);
+      var nextQuestion = document.getElementById('question' + (currentQuestion + 1));
+      
+      question.style.display = 'none';
+      nextQuestion.style.display = 'block';
+      
+      currentQuestion++;
+    }
+
+    function calculateScore() {
+  var score = 0;
+
+  var answers = document.getElementsByClassName('answer');
+  for (var i = 0; i < answers.length; i++) {
+    if (answers[i].checked) {
+      if (answers[i].classList.contains('correct')) { // Verificar si la respuesta es correcta
+        score++; // Sumar 1 para las respuestas correctas
+      }
+    }
+  }
+
+  alert('Puntuación: ' + score);
+}
+  </script>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #recuadro {
+      top: 0px;
+      width: 900px;
+      height: 400px;
+      border: 10px solid rgba(0, 128, 0, 0);
+      animation: blinking 2s infinite;
+    }
+
+    @keyframes blinking {
+      0% {
+        border-color: rgba(0, 128, 0, 0);
+      }
+      50% {
+        border-color: rgba(0, 128, 0, 1);
+      }
+      100% {
+        border-color: rgba(0, 128, 0, 0);
+      }
+    }
+
+    #contenedor-texto {
+      position: absolute;
+      top: 80px;
+      right: 200px;
+      transform: translateY(-50%);
+      width: 50%;
+      padding: 20px;
+      background-color: rgba(0, 128, 0, 0.5);
+      color: white;
+      font-size: 18px;
+    }
+
+    .calavera {
+      position: absolute;
+      top: 60px;
+      right: 150px;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .verde{
+      color: green;
+    }
+
+    .textoverde{
+     position: absolute;
+      top: 230px;
+      right: 80px;
+      width: 300px;
+      height: 200px;
+      object-fit: cover; 
+    }
+    .question-container {
+      position: absolute;
+      top: 20px;
+      left: 180px;
+    }
+
+    .question {
+      display: none;
+      color: green;
+      font-size: 28px;
+    }
+  </style>
+</head>
+<body>
+  <div id="recuadro">
+    <img class="calavera" src="calavera.gif" alt="Imagen">
+    <img class="textoverde" src="textoverde.gif" alt="Imagen">
+    <div class="question-container">
+        <div class="contenedor-texto">
+          <h1>Cuestionario</h1>
+      
+      <div id="question1" class="question">
+        <h2>Pregunta 1</h2>
+        <p>Encuentra la ecuación de la recta que pasa por los puntos A(-7,-5) B(4,3)</p>
+        <input type="radio" name="q1" class="answer correct" value="a"> a) 88x - y + 11 = 0<br> 
+        <input type="radio" name="q1" class="answer" value="b"> b) 90x - 2y + 11 = 0<br>
+        <input type="radio" name="q1" class="answer" value="c"> c) 88y - 6y + 11 = 0<br>
+        <button onclick="showQuestion()">Siguiente</button>
+      </div>
+      
+      <div id="question2" class="question">
+        <h2>Encuentra la ecuación de la recta que pasa por los puntos A(2, 3) y B(5, 1)</h2>
+        <p>¿Cuál es el río más largo del mundo?</p>
+        <input type="radio" name="q2" class="answer" value="a"> a) 2x - 3y + 48 = 0<br>
+        <input type="radio" name="q2" class="answer" value="b"> b) 2x - 6y + 4 = 0<br>
+        <input type="radio" name="q2" class="answer correct" value="c"> c) 2x - 3y + 4 = 0<br> 
+        <button onclick="showQuestion()">Siguiente</button>
+      </div>
+      
+      <div id="question3" class="question">
+        <h2>Pregunta 3</h2>
+        <p>Encuentra la ecuación de la recta que pasa por los puntos A(1, 4) y B(4, 7)</p>
+        <input type="radio" name="q3" class="answer correct" value="a"> a) -3x + y + 1 = 0<br> 
+        <input type="radio" name="q3" class="answer" value="b"> b) -3x + y + 5 = 0<br>
+        <input type="radio" name="q3" class="answer" value="c"> c) 3x + y + 1 = 0<br>
+        <button onclick="showQuestion()">Siguiente</button>
+      </div>
+
+      <div id="question4" class="question">
+        <h2>Pregunta 4</h2>
+        <p>Encuentra la ecuación de la recta que pasa por los puntos A(-2, 5) y B(3, 5)</p>
+        <input type="radio" name="q4" class="answer" value="a"> a) y - 4 = 0<br>
+        <input type="radio" name="q4" class="answer" value="b"> b) y - 8 = 0<br>
+        <input type="radio" name="q4" class="answer correct" value="c"> c) y - 5 = 0<br> 
+        <button onclick="showQuestion()">Siguiente</button>
+      </div>
+
+      <div id="question5" class="question">
+        <h2>Pregunta 5</h2>
+        <p>Encuentra la ecuación de la recta que pasa por los puntos B(-3, 2) y B(-3, 6)</p>
+        <input type="radio" name="q5" class="answer" value="a"> a) 5x + 3 = 0<br>
+        <input type="radio" name="q5" class="answer correct" value="b"> b) x + 3 = 0<br>
+        <input type="radio" name="q5" class="answer" value="c"> c) 8x + 3 = 0<br>
+        <button onclick="calculateScore()">Terminar</button>
+      </div>
+
+      
+      <script>
+        document.getElementById('question1').style.display = 'block';
+      </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

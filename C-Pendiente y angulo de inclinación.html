@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <style>
+        #movable-object {
+    width: 5%;
+    height: 8%;
+    background-image: url('pj.png');
+    background-size: cover;
+    position: absolute;
+    top: 6%;
+    left: 2.5%;
+}
+
+.collectible-object {
+    width: 5%;
+    height: 8%;
+    background-image: url(money.png);
+    background-size: cover;
+    position: absolute;
+}
+
+.special-collectible {
+    background-image: url(money.png);
+}
+
+
+/* Resto de los obstáculos omitidos por brevedad */
+
+#tapon1 {
+    width: 14.6%;
+    height: 1%;
+    background-color: #FFFFFF80;
+    position: absolute;
+    top: -1%;
+    left: 0;
+}
+
+#tapon2 {
+    width: 100%;
+    height: 1%;
+    background-color: #FFFFFF80;
+    position: absolute;
+    top: 99%;
+    left: 0;
+}
+#tapon3 {
+    width: 8.8%;
+    height: 1%;
+    background-color: #FFFFFF80;
+    position: absolute;
+    top: -10px;
+    left: 40.2%;
+}
+
+
+/* Resto de los taponamientos omitidos por brevedad */
+
+.pregunta{
+            font-size: 40px;
+            margin-top: 40%;
+            margin-left: 10%;
+            color: black;
+            text-decoration: bold;
+            display: block;
+        }
+        .preguntas{
+           font-size: 40px;
+            margin-top: 40%;
+            margin-left: 10%;
+            color: black;
+            text-decoration: bold;
+            display: none; 
+        }
+
+#obstacle {
+    width: 1%;
+    height: 25%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 0;
+    left: 14.6%;
+}
+
+#obstacle2 {
+    width: 1%;
+    height: 25%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 0;
+    left: 40.4%;
+}
+
+#obstacle3 {
+    width: 9.1%;
+    height: 1%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 25%;
+    left: 14.6%;
+}
+
+#obstacle4 {
+    width: 9.1%;
+    height: 1%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 25%;
+    left: 32.3%;
+}
+
+#obstacle5 {
+    width: 25.9%;
+    height: 1%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 0;
+    left: 14.6%;
+}
+
+#obstacle6 {
+    width: 25.6%;
+    height: 1%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 0;
+    left: 47.6%;
+}
+
+#obstacle7 {
+    width: 1%;
+    height: 25%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 0;
+    left: 47.6%;
+}
+
+#obstacle8 {
+    width: 9.1%;
+    height: 1%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 25%;
+    left: 47.6%;
+}
+
+#obstacle9 {
+    width: 9.1%;
+    height: 1%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 25%;
+    left: 64%;
+}
+
+#obstacle10 {
+    width: 1%;
+    height: 71%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 0;
+    left: 72.8%;
+}
+
+#obstacle11 {
+    width: 9.1%;
+    height: 1%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+#obstacle12 {
+    width: 1%;
+    height: 20%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+#obstacle13 {
+    width: 22.7%;
+    height: 1%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 70%;
+    left: 0;
+}
+
+#obstacle14 {
+    width: 1%;
+    height: 21%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 50%;
+    left: 22%;
+}
+
+#obstacle15 {
+    width: 5.8%;
+    height: 1%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 50%;
+    left: 16.1%;
+}
+
+#obstacle16 {
+    width: 1%;
+    height: 20%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 51%;
+    left: 29.2%;
+}
+
+#obstacle17 {
+    width: 1%;
+    height: 10%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 50%;
+    left: 36.7%;
+}
+
+#obstacle18 {
+    width: 36.6%;
+    height: 1%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 50%;
+    left: 29.2%;
+}
+
+#obstacle19 {
+    width: 1%;
+    height: 10%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 61%;
+    left: 54.9%;
+}
+
+#obstacle20 {
+    width: 43.7%;
+    height: 1%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 70%;
+    left: 29.2%;
+}
+
+#obstacle21 {
+    width: 17.6%;
+    height: 1%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 0;
+    left: 82.4%;
+}
+
+#obstacle22 {
+    width: 1%;
+    height: 99%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 0%;
+    left: 98.9%;
+}
+
+#obstacle23 {
+    width: 1%;
+    height: 15.4%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 0;
+    left: 82.4%;
+}
+
+#obstacle24 {
+    width: 16.5%;
+    height: 1%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 31%;
+    left: 82.7%;
+}
+
+#obstacle25 {
+    width: 16.5%;
+    height: 1%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 70%;
+    left: 82.7%;
+}
+
+#obstacle26 {
+    width: 1%;
+    height: 13.9%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 31%;
+    left: 82.7%;
+}
+
+#obstacle27 {
+    width: 1%;
+    height: 13.9%;
+    background-image: url(pared.jpeg);
+    position: absolute;
+    top: 57%;
+    left: 82.7%;
+}
+body{
+    background-image:url("suelo.jpeg");
+    background-position: -20px-20px;
+    background-repeat: repeat;
+    background-size: 5%;
+}
+
+
+    </style>
+</head>
+<body>
+    <div id="movable-object"></div>
+    <div class="collectible-object" id="chamba1" style="top: 50px; left: 90px;">
+        <span class="collectible-text"><strong>2x/3 + y/4=1</strong></span>
+    </div>
+    <div class="collectible-object special-collectible" id="chambacorrecta" style="top: 200px; left: 300px;">
+        <span class="collectible-text"><strong>x/2 + <br>y/4 = 1</strong></span>
+    </div>
+    <div class="collectible-object" id="chamba2" style="top: 200px; left: 500px;">
+        <span class="collectible-text"><strong>x/6 + <br>y/8 =1</strong></span>
+    </div>
+    <div class="obstacle" id="obstacle"></div>
+    <div class="obstacle2" id="obstacle2"></div>
+    <div class="obstacle3" id="obstacle3"></div>
+    <div class="obstacle4" id="obstacle4"></div>
+    <div class="obstacle5" id="obstacle5"></div>
+    <div class="obstacle6" id="obstacle6"></div>
+    <div class="obstacle7" id="obstacle7"></div>
+    <div class="obstacle8" id="obstacle8"></div>
+    <div class="obstacle9" id="obstacle9"></div>
+    <div class="obstacle10" id="obstacle10"></div>
+    <div class="obstacle11" id="obstacle11"></div>
+    <div class="obstacle12" id="obstacle12"></div>
+    <div class="obstacle13" id="obstacle13"></div>
+    <div class="obstacle14" id="obstacle14"></div>
+    <div class="obstacle15" id="obstacle15"></div>
+    <div class="obstacle16" id="obstacle16"></div>
+    <div class="obstacle17" id="obstacle17"></div>
+    <div class="obstacle18" id="obstacle18"></div>
+    <div class="obstacle19" id="obstacle19"></div>
+    <div class="obstacle20" id="obstacle20"></div>
+    <div class="obstacle21" id="obstacle21"></div>
+    <div class="obstacle22" id="obstacle22"></div>
+    <div class="obstacle23" id="obstacle23"></div>
+    <div class="obstacle24" id="obstacle24"></div>
+    <div class="obstacle25" id="obstacle25"></div>
+    <div class="obstacle26" id="obstacle26"></div>
+    <div class="obstacle27" id="obstacle27"></div>
+
+    <div class="tapon1" id="tapon1"></div>
+    <div class="tapon2" id="tapon2"></div>
+    <div class="tapon3" id="tapon3"></div>
+    <div class="tapon4" id="tapon4"></div>
+    <!-- Agrega más divs para cada obstáculo adicional -->
+    <div id="counter">Vidas Restantes: 3</div>
+    <div id="score"></div>
+    <div class="pregunta" id="pregunta1"><p>2x+y-4=0</p></div>
+    <div class="preguntas" id="pregunta2">3x-3y+6=0</div>
+    <div class="preguntas" id="pregunta3">2x+3y-5=0</div>
+    <div class="preguntas" id="pregunta4">-4x+2y+8=0</div>
+    <div class="preguntas" id="pregunta5">x-y+3=0</div>
+
+    <script>
+
+        //alert("Contesta las Preguntas moviendo el muñeco, utilizando las flechas del teclado");
+        //alert("Transforma la ecuacion general a simetrica");
+        
+
+        var object = document.getElementById('movable-object');
+        var collectibles = document.getElementsByClassName('collectible-object');
+        var score = 0;
+        var scoreElement = document.getElementById('score');
+        var collectiblePositions = [];
+        var counter = 3;
+        var counterElement = document.getElementById('counter');
+        var newPositions = [];
+
+
+
+        document.addEventListener('keydown', moveObject);
+
+        function moveObject(event) {
+            var currentPositionX = parseInt(object.style.left) || 30;
+            var currentPositionY = parseInt(object.style.top) || 25;
+            var newPositionX = currentPositionX;
+            var newPositionY = currentPositionY;
+            var step = 10;
+
+            switch (event.keyCode) {
+                case 37: // Left arrow key
+                newPositionX = currentPositionX - step;
+                object.style.transform = "scaleX(-1)"; // Invierte horizontalmente la imagen
+                break;
+                case 39: // Right arrow key
+                newPositionX = currentPositionX + step;
+                object.style.transform = "scaleX(1)"; // Restaura la orientación original de la imagen
+                break;
+                case 38: // Up arrow key
+                newPositionY = currentPositionY - step;
+                break;
+                case 40: // Down arrow key
+                newPositionY = currentPositionY + step;
+                break;
+            }
+
+            if (!isCollision(newPositionX, newPositionY)) {
+                object.style.left = newPositionX + 'px';
+                object.style.top = newPositionY + 'px';
+                checkCollectibles(); // Corrección: Llamada a la función checkCollectibles()
+            }
+        }
+
+
+        function isCollision(x, y) {
+            var obstacles = document.querySelectorAll('.obstacle, .obstacle2, .obstacle3, .obstacle4, .obstacle5, .obstacle6, .obstacle7, .obstacle8, .obstacle9, .obstacle10, .obstacle11, .obstacle12, .obstacle13, .obstacle14, .obstacle15, .obstacle16, .obstacle17, .obstacle18, .obstacle19, .obstacle20,.obstacle21,.obstacle22,.obstacle23,.obstacle24,.obstacle25,.obstacle26,.obstacle27, .tapon1,.tapon2,.tapon3,.tapon4');
+            for (var i = 0; i < obstacles.length; i++) {
+                var obstacle = obstacles[i];
+                var obstacleRect = obstacle.getBoundingClientRect();
+                var objectRect = {
+                left: x,
+                top: y,
+                right: x + parseInt(getComputedStyle(object).width),
+                bottom: y + parseInt(getComputedStyle(object).height)
+            };
+
+            if (
+                objectRect.left < obstacleRect.right &&
+                objectRect.right > obstacleRect.left &&
+                objectRect.top < obstacleRect.bottom &&
+                objectRect.bottom > obstacleRect.top
+            )   {
+                    return true;
+                }
+            }
+                    return false;
+        }
+
+        function isCollisionWithObstacle(position) {
+            var obstacles = document.querySelectorAll('.obstacle, .obstacle2, .obstacle3, .obstacle4, .obstacle5, obstacle6, .obstacle7, .obstacle8, .obstacle9, .obstacle10, .obstacle11, .obstacle12, .obstacle13, .obstacle14, .obstacle15, .obstacle16, .obstacle17, .obstacle18, .obstacle19, .obstacle20,.obstacle21,.obstacle22,.obstacle23,.obstacle24,.obstacle25,.obstacle26,.obstacle27, .tapon1,.tapon2,.tapon3,.tapon4');
+            for (var i = 0; i < obstacles.length; i++) {
+                var obstacle = obstacles[i];
+                var obstacleRect = obstacle.getBoundingClientRect();
+
+                var margin = 10; // Valor del margen adicional
+
+                // ...
+
+                var obstacleRect = obstacle.getBoundingClientRect();
+
+                // Agregar margen al rectángulo delimitador
+                obstacleRect.left -= margin;
+                obstacleRect.right += margin;
+                obstacleRect.top -= margin;
+                obstacleRect.bottom += margin;
+
+
+                if (
+                    position.x < obstacleRect.right &&
+                    position.x + parseInt(getComputedStyle(obstacle).width) > obstacleRect.left &&
+                    position.y < obstacleRect.bottom &&
+                    position.y + parseInt(getComputedStyle(obstacle).height) > obstacleRect.top
+                ) {
+                return true;
+                }
+            }
+
+            return false;
+        }
+
+
+        function ocultar1(){
+                document.getElementById('pregunta1').style.display='none';
+            }
+        function mostrar2(){
+                document.getElementById('pregunta2').style.display='block';
+        } 
+        function ocultar2(){
+                document.getElementById('pregunta2').style.display='none';
+        }
+        function mostrar3(){
+                document.getElementById('pregunta3').style.display='block';
+        }
+        function ocultar3(){
+                document.getElementById('pregunta3').style.display='none';
+        }
+        function mostrar4(){
+                document.getElementById('pregunta4').style.display='block';
+        }
+        function ocultar4(){
+                document.getElementById('pregunta4').style.display='none';
+        }
+        function mostrar5(){
+                document.getElementById('pregunta5').style.display='block';
+        }
+        function ocultar5(){
+                document.getElementById('pregunta5').style.display='none';
+        }
+
+        function updateScore() {
+            scoreElement.innerText = 'Puntuación: ' + score;
+
+            if (score === 5) {
+                window.location.href = 'nuevo-documento.html';
+            }
+            if (score === 1) {
+                var melleva1 = document.getElementById('chamba1');
+                melleva1.innerHTML = '<strong>x/-4/5-<br>y/4/3=1</strong>';
+                var melleva2 = document.getElementById('chamba2');
+                melleva2.innerHTML = '<strong>x/-8/2+<br>y/6/2=1</strong>';
+                var melleva3 = document.getElementById('chambacorrecta');
+                melleva3.innerHTML = '<strong>x/-4/5+<br>y/4/3=1</strong>';
+                ocultar1();
+                mostrar2();
+            }
+            if (score === 2) {
+                var melleva1 = document.getElementById('chamba1');
+                melleva1.innerHTML = '<strong>y/4/6+<br>y/7/8=1</strong>';
+                var melleva2 = document.getElementById('chamba2');
+                melleva2.innerHTML = '<strong>x/2/5+<br>y/4/3=1</strong>';
+                var melleva3 = document.getElementById('chambacorrecta');
+                melleva3.innerHTML = '<strong>x/5/2+<br>y/5/3=1</strong>';
+                ocultar2();
+                mostrar3();
+            }
+            if (score === 3) {
+                var melleva1 = document.getElementById('chamba1');
+                melleva1.innerHTML = '<strong>x/-4+<br>y/-6=1</strong>';
+                var melleva2 = document.getElementById('chamba2');
+                melleva2.innerHTML = '<strong>x/4+<br>y/6=1</strong>';
+                var melleva3 = document.getElementById('chambacorrecta');
+                melleva3.innerHTML = '<strong>x/2+<br>y/-4=1</strong>';
+                ocultar3();
+                mostrar4();
+            }
+            if (score === 4) {
+                var melleva1 = document.getElementById('chamba1');
+                melleva1.innerHTML = '<strong>x/5+<br>y/6=1</strong>';
+                var melleva2 = document.getElementById('chamba2');
+                melleva2.innerHTML = '<strong>x/3+<br>y/-3=1</strong>';
+                var melleva3 = document.getElementById('chambacorrecta');
+                melleva3.innerHTML = '<strong>x/-3+<br>y/3=1</strong>';
+                ocultar4();
+                mostrar5();
+            }
+        }
+
+
+        function isCollisionWithCollectible(collectible) {
+            var collectibleRect = collectible.getBoundingClientRect();
+            var objectRect = object.getBoundingClientRect();
+
+            return (
+                objectRect.left < collectibleRect.right &&
+                objectRect.right > collectibleRect.left &&
+                objectRect.top < collectibleRect.bottom &&
+                objectRect.bottom > collectibleRect.top
+            );
+        }
+
+        function updateCounter() {
+            counterElement.innerText = 'Vidas Restantes: ' + counter;
+
+            if (counter == 0) {
+                alert("Game Over \n Intentelo de nuevo");
+                setTimeout(function() {
+                location.reload();
+                }, 10); // Se actualiza la página después de 1 segundo (1000 milisegundos)
+            }
+        }
+
+        
+
+
+
+
+
+
+        function getRandomPosition() {
+
+    switch (score) {
+        case 1:
+            var collectible = document.getElementById('chamba1');
+            collectible.style.top = '70px';
+            collectible.style.left = '500px';
+            collectible.style.display = 'block';
+
+            var collectible2 = document.getElementById('chamba2');
+            collectible2.style.top = '140px';
+            collectible2.style.left = '800px';
+            collectible2.style.display = 'block';
+
+            var specialObjectContainer = document.getElementById("chambacorrecta");
+
+        // Establecer la posición fija del objeto especial
+        specialObjectContainer.style.left = "100px";
+        specialObjectContainer.style.top = "500px";
+
+        // Volver a mostrar el objeto especial
+        specialObjectContainer.style.display = "block";
+
+            break;
+        case 2:
+            var collectible = document.getElementById('chamba1');
+            collectible.style.top = '100px';
+            collectible.style.left = '200px';
+            collectible.style.display = 'block';
+
+            var collectible2 = document.getElementById('chamba2');
+            collectible2.style.top = '100px';
+            collectible2.style.left = '600px';
+            collectible2.style.display = 'block';
+
+            var specialObjectContainer = document.getElementById("chambacorrecta");
+
+        // Establecer la posición fija del objeto especial
+        specialObjectContainer.style.left = "400px";
+        specialObjectContainer.style.top = "380px";
+
+        // Volver a mostrar el objeto especial
+        specialObjectContainer.style.display = "block";
+
+            break;
+        case 3:
+            var collectible = document.getElementById('chamba1');
+            collectible.style.top = '100px';
+            collectible.style.left = '900px';
+            collectible.style.display = 'block';
+
+            var collectible2 = document.getElementById('chamba2');
+            collectible2.style.top = '100px';
+            collectible2.style.left = '500px';
+            collectible2.style.display = 'block';
+
+            var specialObjectContainer = document.getElementById("chambacorrecta");
+
+        // Establecer la posición fija del objeto especial
+        specialObjectContainer.style.left = "200px";
+        specialObjectContainer.style.top = "100px";
+
+        // Volver a mostrar el objeto especial
+        specialObjectContainer.style.display = "block";
+            break;
+        case 4:
+            var collectible = document.getElementById('chamba1');
+            collectible.style.top = '100px';
+            collectible.style.left = '900px';
+            collectible.style.display = 'block';
+
+            var collectible2 = document.getElementById('chamba2');
+            collectible2.style.top = '100px';
+            collectible2.style.left = '500px';
+            collectible2.style.display = 'block';
+
+            var specialObjectContainer = document.getElementById("chambacorrecta");
+
+        // Establecer la posición fija del objeto especial
+        specialObjectContainer.style.left = "800px";
+        specialObjectContainer.style.top = "500px";
+
+        // Volver a mostrar el objeto especial
+        specialObjectContainer.style.display = "block";
+            break; 
+        
+
+    }
+}
+
+ function checkCollectibles() {
+            for (var i = 0; i < collectibles.length; i++) {
+                var collectible = collectibles[i];
+                if (isCollisionWithCollectible(collectible)) {
+                    collectible.style.display = 'none'; // Oculta el objeto recolectable
+                    if (collectible.classList.contains('special-collectible')) {
+                        score++;
+                        getRandomPosition();
+                        updateScore();
+                    } else {
+                        counter--;
+                        updateCounter();
+                    }
+                    //respawnCollectible(collectible);
+                }
+            }
+        }
+
+
+
+
+       
+
+
+            </script>
+</body>
+</html>
