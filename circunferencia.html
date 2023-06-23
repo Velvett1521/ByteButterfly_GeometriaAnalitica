@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contorno de color verde</title>
+  <script>
+    var currentQuestion = 1;
+    
+    function showQuestion() {
+      var question = document.getElementById('question' + currentQuestion);
+      var nextQuestion = document.getElementById('question' + (currentQuestion + 1));
+      
+      question.style.display = 'none';
+      nextQuestion.style.display = 'block';
+      
+      currentQuestion++;
+    }
+
+    function calculateScore() {
+  var score = 0;
+
+  var answers = document.getElementsByClassName('answer');
+  for (var i = 0; i < answers.length; i++) {
+    if (answers[i].checked) {
+      if (answers[i].classList.contains('correct')) { // Verificar si la respuesta es correcta
+        score++; // Sumar 1 para las respuestas correctas
+      }
+    }
+  }
+
+  alert('Puntuación: ' + score);
+  window.location("felicitacion.html")
+}
+  </script>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #recuadro {
+      top: 0px;
+      width: 900px;
+      height: 400px;
+      border: 10px solid rgba(0, 128, 0, 0);
+      animation: blinking 2s infinite;
+    }
+
+    @keyframes blinking {
+      0% {
+        border-color: rgba(0, 128, 0, 0);
+      }
+      50% {
+        border-color: rgba(0, 128, 0, 1);
+      }
+      100% {
+        border-color: rgba(0, 128, 0, 0);
+      }
+    }
+
+    #contenedor-texto {
+      position: absolute;
+      top: 80px;
+      right: 200px;
+      transform: translateY(-50%);
+      width: 50%;
+      padding: 20px;
+      background-color: rgba(0, 128, 0, 0.5);
+      color: white;
+      font-size: 18px;
+    }
+
+    .calavera {
+      position: absolute;
+      top: 60px;
+      right: 150px;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .verde{
+      color: green;
+    }
+
+    .textoverde{
+     position: absolute;
+      top: 230px;
+      right: 80px;
+      width: 300px;
+      height: 200px;
+      object-fit: cover; 
+    }
+    .question-container {
+      position: absolute;
+      top: 20px;
+      left: 180px;
+    }
+
+    .question {
+      display: none;
+      color: green;
+      font-size: 28px;
+    }
+  </style>
+</head>
+<body>
+  <div id="recuadro">
+    <img class="calavera" src="imagenesm/calavera.gif" alt="Imagen">
+    <img class="textoverde" src="imagenesm/textoverde.gif" alt="Imagen">
+    <div class="question-container">
+        <div class="contenedor-texto">
+          <h1>Cuestionario</h1>
+      
+      <div id="question1" class="question">
+        <h2>Pregunta 1</h2>
+        <p>Deduce cuanto mide el radio de la circunferencia cuya ecuación es: x^2 + y^2 = 54</p>
+        <input type="radio" name="q1" class="answer correct" value="a"> a) r=7.34<br>
+        <input type="radio" name="q1" class="answer" value="b"> b) r=6.35<br>
+        <input type="radio" name="q1" class="answer" value="c"> c) r=6<br>
+        <button onclick="showQuestion()">Siguiente</button>
+      </div>
+      
+      <div id="question2" class="question">
+        <h2>Pregunta 2</h2>
+        <p>Deduce cuanto mide el radio de la circunferencia cuya ecuación es: x^2 + y^2 = 75</p>
+        <input type="radio" name="q2" class="answer" value="a"> a) r=8<br>
+        <input type="radio" name="q2" class="answer correct" value="b"> b) r=8.66<br>
+        <input type="radio" name="q2" class="answer" value="c"> c) r=37.5<br>
+        <button onclick="showQuestion()">Siguiente</button>
+      </div>
+      
+      <div id="question3" class="question">
+        <h2>Pregunta 3</h2>
+        <p>Se da el radio de una circunferencia con centro en el origen determina su ecución r=5</p>
+        <input type="radio" name="q3" class="answer correct" value="a"> a) x^2 + y^2 =45<br>
+        <input type="radio" name="q3" class="answer" value="b"> b) x^2 + y^2 =40<br>
+        <input type="radio" name="q3" class="answer" value="c"> c) x^2 + y^2 =10<br>
+        <button onclick="showQuestion()">Siguiente</button>
+      </div>
+
+      <div id="question4" class="question">
+        <h2>Pregunta 4</h2>
+        <p>Se da el radio de una circunferencia con centro en el origen determina su ecución r=9</p>
+        <input type="radio" name="q4" class="answer" value="a"> a) x^2 + y^2 =9<br>
+        <input type="radio" name="q4" class="answer" value="b"> b) x^2 + y^2 =18<br>
+        <input type="radio" name="q4" class="answer correct" value="c"> c) x^2 + y^2 =81<br>
+        <button onclick="showQuestion()">Siguiente</button>
+      </div>
+
+      <div id="question5" class="question">
+        <h2>Pregunta 5</h2>
+        <p>Determina la ecuacion de la circunferencia con centro en c(-2,5) y r=4</p>
+        <input type="radio" name="q5" class="answer correct" value="a"> a) (x+2)^2 + (y-5)^2 = 16<br> 
+        <input type="radio" name="q5" class="answer" value="b"> b) (x+4)^2 + (y-6)^2 = 16<br>
+        <input type="radio" name="q5" class="answer" value="c"> c) (x+2)^2 + (y-5)^2 = 30<br> 
+        <button onclick="calculateScore()">Terminar</button>
+      </div>
+
+      
+      <script>
+        document.getElementById('question1').style.display = 'block';
+      </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
