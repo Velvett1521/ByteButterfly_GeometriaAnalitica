@@ -1,0 +1,37 @@
+
+ body{
+ 	background-image: url('fondoazul.jpg');
+ 	background-repeat: 2 repeat;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
+ }
+ .parrafos{
+  display:flex;
+}
+
+.tema
+{
+  margin-left:20px;
+  margin-right:20px;
+}
+.lista
+{
+  margin-left:200px;
+  margin-right:200px;
+}
+.lista2{
+ margin-left:0px;
+  margin-right:0px;
+}
+.titulos{
+  margin-left:200px;
+  margin-right:200px;
+}  
+.temas
+ {
+  margin-left:200px;
+  margin-right:200px;
+ }
+img.izquierda{float:left;}
+img.derecha{float:right;}
